@@ -133,13 +133,25 @@ def get_real_info(phone):
         r = row[0]
         if prefix == row[0]:
             if part >= row[1] and part <= row[2]:
-                result_info = {
-                    "number": phone,
-                    "prefix": prefix,
-                    "part": part,
-                    "operator": get_bdpn_info(phone),
-                    "region": row[5],
-                    "country": info(row[5])[1],
-                    "Timezone": info(row[5])[0]
-                }
+                try:
+                    realop = get_bdpn_info(phone)
+                    result_info = {
+                        "number": phone,
+                        "prefix": prefix,
+                        "part": part,
+                        "operator": realop,
+                        "region": row[5],
+                        "country": info(row[5])[1],
+                        "Timezone": info(row[5])[0]
+                    }
+                except:
+                    result_info = {
+                        "number": phone,
+                        "prefix": prefix,
+                        "part": part,
+                        "operator": row[4],
+                        "region": row[5],
+                        "country": info(row[5])[1],
+                        "Timezone": info(row[5])[0]
+                    }
     return result_info
