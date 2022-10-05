@@ -1,0 +1,13 @@
+"""
+Google API key
+"""
+API_KEY = ""
+
+"""
+SFTP ZNIIS
+"""
+ZNIIS_HOST = ""
+ZNIIS_PORT =
+ZNIIS_LOGIN = ""
+ZNIIS_PWD = ""
+ZNIIS_FILE_DIR = "/numlex/Port_All_New/"

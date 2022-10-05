@@ -2,5 +2,5 @@
 .idea
 /test.py
 /igp/settings.py
-*Port_All_New_*
+*.csv
 __pycache__
